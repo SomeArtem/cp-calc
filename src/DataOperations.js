@@ -44,7 +44,7 @@ export function editPersonById(id, paramName, newValue) {
   FetchedPersons.find(p=>p.id==id)[paramName]=newValue
 
 
-  //console.log('editPersonById: ', FetchedPersons.find(p=>p.id==id)['hp'])
+  console.log('editPersonById: ', paramName, newValue)
   
   localStorage.setItem('persArray',JSON.stringify(FetchedPersons))
 }

@@ -1,4 +1,5 @@
 import actions from "./actions"
+import { DrawChar } from "./drawChar"
 
 export default class Person{
   actionMethod
@@ -8,6 +9,7 @@ export default class Person{
   constructor({
     id,
     hp,
+    age=0,
     persName='Not assigned',
     headSP=0,
     torsoSP=0,
@@ -115,6 +117,7 @@ export default class Person{
   },actionMethod,deleteMethod,damageMethod){
     this.id=id
     this.hp=hp
+    this.age=age
     this.headSP=headSP
     this.torsoSP=torsoSP
     this.rightHandSP=rightHandSP
@@ -233,7 +236,7 @@ export default class Person{
     }
     return resultOb    
   }
-  Display(persContainer){
+  Display2(persContainer){
     let PersonBox=document.createElement('div')
     let DeleteButton=document.createElement('button')
     DeleteButton.innerText='Delete'
@@ -246,17 +249,28 @@ export default class Person{
       if (typeof(valElement)=='string'||typeof(valElement)=='number') {
         if (key=='id'){
           let idBox=document.createElement('div')
-          idBox.style.fontSize='10px'
+          idBox.classList.add('idBox')          
           idBox.innerText=ThisPersonInfo.id
           PersonBox.appendChild(idBox) 
         }else if(key=='hp'){
           //Если поле - это HP
-          let val=document.createElement('div')
-          val.innerText='hp: '
-          for (let i = 0; i < valElement; i++) {
-            val.innerText+='o'
+          let hpBox=document.createElement('div')
+          hpBox.innerText=`hp:${valElement} \n`
+          
+          let damagedHpBox=document.createElement('span')  
+          damagedHpBox.style.color='#ff0000'        
+          for (let i = 0; i < 40-valElement; i++) {
+            damagedHpBox.innerText+='x'
           }
-          PersonBox.appendChild(val)
+         
+
+          let etcHpBox=document.createElement('span') 
+          for (let i = 0; i < valElement; i++) {
+            etcHpBox.innerText+='o'
+          }        
+           hpBox.appendChild(damagedHpBox)  
+           hpBox.appendChild(etcHpBox)  
+          PersonBox.appendChild(hpBox)
         }else{
         let val=document.createElement('div')
         val.innerText=key+' : '+valElement
@@ -265,9 +279,7 @@ export default class Person{
       }      
     }
     persContainer.appendChild(PersonBox)
-    PersonBox.style.backgroundColor='grey'
-    PersonBox.style.margin='10px'    
-    PersonBox.style.width='23%'
+    PersonBox.classList.add('PersonBox')
     
     let action=document.createElement('select')
     let newListData = new Option("Выберите действие", "0", true, false); 
@@ -280,16 +292,19 @@ export default class Person{
     });
 
     let RunActionButton=document.createElement('button')
-    RunActionButton.innerText='RunAction'
+    RunActionButton.innerText='Выполнить действие'
     RunActionButton.onclick=()=>{this.Click(action.value)} 
     PersonBox.appendChild(RunActionButton)
 
     PersonBox.appendChild(action)
 
     let DamageButton=document.createElement('button')
-    DamageButton.innerText='Add Damage'
+    DamageButton.innerText='Получить урон'
     DamageButton.onclick=()=>{this.AddDamage()} 
     PersonBox.appendChild(DamageButton)
+  }
+  Display(persContainer){
+    DrawChar(persContainer, this)
   }
   Click(actionName){
     this.actionMethod(actionName, this.persName)

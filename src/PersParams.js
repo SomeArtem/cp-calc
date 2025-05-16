@@ -4,6 +4,7 @@ export default {
     "params":[
         "id",
         "hp",
+        "age",
         "headSP",
         "torsoSP",
         "rightHandSP",

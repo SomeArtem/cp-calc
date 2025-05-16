@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 #app{
-  width: 1000px;
+  width: 1050px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -16,4 +16,27 @@
   background-color: bisque;
   width: 100%;
   word-break: break-all;
+}
+
+.PersonBox{
+  background-color: grey;
+  margin: 10px;
+  width: 33%;
+}
+
+.idBox{
+  font-size: 8px;
+}
+.damagedHpBox{
+  color: red;
+}
+.persNameBox{
+  font-size: 20px;
+  word-break: keep-all;
+}
+.armPart{
+  padding: 3px;
+}
+.armorBox{
+  display: flex;
 }
