@@ -3,10 +3,18 @@ import actions from "./actions"
 export default class Person{
   actionMethod
   deleteMethod
+  damageMethod
   id
   constructor({
     id,
+    hp,
     persName='Not assigned',
+    headSP=0,
+    torsoSP=0,
+    rightHandSP=0,
+    leftHandSP=0,
+    rightLegSP=0,
+    leftLegSP=0,
     int=0,
     ref=0,
     tec=0,
@@ -104,8 +112,15 @@ export default class Person{
     PickPocket=0,
     PlayInstrument=0,
     Weaponsmith=0,
-  },actionMethod,deleteMethod){
+  },actionMethod,deleteMethod,damageMethod){
     this.id=id
+    this.hp=hp
+    this.headSP=headSP
+    this.torsoSP=torsoSP
+    this.rightHandSP=rightHandSP
+    this.leftHandSP=leftHandSP
+    this.rightLegSP=rightLegSP
+    this.leftLegSP=leftLegSP
     this.persName=persName
     this.int=int
     this.ref=ref
@@ -206,8 +221,10 @@ export default class Person{
     this.Weaponsmith=Weaponsmith      
     this.actionMethod=actionMethod
     this.deleteMethod=deleteMethod
+    this.damageMethod=damageMethod
   }
   Info(){
+    console.log(this)
     let resultOb={}
     for (var key in this) {      
       if (this[key]!==0) {
@@ -218,6 +235,10 @@ export default class Person{
   }
   Display(persContainer){
     let PersonBox=document.createElement('div')
+    let DeleteButton=document.createElement('button')
+    DeleteButton.innerText='Delete'
+    DeleteButton.onclick=()=>{this.Delete()} 
+    PersonBox.appendChild(DeleteButton)
     let ThisPersonInfo=this.Info()
 
     for (let key in ThisPersonInfo) {
@@ -228,10 +249,19 @@ export default class Person{
           idBox.style.fontSize='10px'
           idBox.innerText=ThisPersonInfo.id
           PersonBox.appendChild(idBox) 
+        }else if(key=='hp'){
+          //Если поле - это HP
+          let val=document.createElement('div')
+          val.innerText='hp: '
+          for (let i = 0; i < valElement; i++) {
+            val.innerText+='o'
+          }
+          PersonBox.appendChild(val)
         }else{
         let val=document.createElement('div')
         val.innerText=key+' : '+valElement
-        PersonBox.appendChild(val)}        
+        PersonBox.appendChild(val)
+      }        
       }      
     }
     persContainer.appendChild(PersonBox)
@@ -249,25 +279,26 @@ export default class Person{
       action.appendChild(newOption)   
     });
 
-
-
     let RunActionButton=document.createElement('button')
     RunActionButton.innerText='RunAction'
     RunActionButton.onclick=()=>{this.Click(action.value)} 
     PersonBox.appendChild(RunActionButton)
 
-    let DeleteButton=document.createElement('button')
-    DeleteButton.innerText='Delete'
-    DeleteButton.onclick=()=>{this.Delete()} 
-    PersonBox.appendChild(DeleteButton)
-
     PersonBox.appendChild(action)
+
+    let DamageButton=document.createElement('button')
+    DamageButton.innerText='Add Damage'
+    DamageButton.onclick=()=>{this.AddDamage()} 
+    PersonBox.appendChild(DamageButton)
   }
   Click(actionName){
     this.actionMethod(actionName, this.persName)
   }
   Delete(){
     this.deleteMethod(this.id)
+  }
+  AddDamage(){
+    this.damageMethod(this.id)
   }
 
 }

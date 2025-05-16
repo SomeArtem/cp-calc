@@ -15,4 +15,5 @@
   flex-wrap: wrap;
   background-color: bisque;
   width: 100%;
+  word-break: break-all;
 }

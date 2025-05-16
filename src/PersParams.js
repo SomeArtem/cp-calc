@@ -3,6 +3,13 @@ export default {
     "age" : "20",
     "params":[
         "id",
+        "hp",
+        "headSP",
+        "torsoSP",
+        "rightHandSP",
+        "leftHandSP",
+        "rightLegSP",
+        "leftLegSP",
         "persName",
         "int",
         "ref",

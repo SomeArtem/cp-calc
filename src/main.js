@@ -14,8 +14,6 @@ if (localStorage.getItem('persArray')==null) {
   localStorage.setItem('persArray',JSON.stringify([]))  
 }
 
-
-
 let StoredAsPersons=[]
 StoredAsPersons=getData()
 DisplayPers(StoredAsPersons)

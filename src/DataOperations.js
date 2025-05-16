@@ -1,5 +1,6 @@
 import actionMethod from "./actionMethod"
 import deleteMethod from "./deleteMethod"
+import damageMethod from "./damageMethod"
 import Person from "./Person"
 import setPerson from "./setPerson"
 
@@ -9,15 +10,17 @@ export function getData() {
   let StoredAsPersons=[]
   FetchedPersons=JSON.parse(localStorage.getItem('persArray'))  
   for (let i = 0; i < FetchedPersons.length; i++) {
-    let currentPers=new Person(FetchedPersons[i], actionMethod, deleteMethod)
+    let currentPers=new Person(FetchedPersons[i], actionMethod, deleteMethod, damageMethod)
     StoredAsPersons.push(currentPers)
   }
+  console.log('Отработал getData FetchedPersons: ')
+  console.dir(FetchedPersons)
   return StoredAsPersons
 }
 
 export function AddFunction() {
   let PersonParams=setPerson()
-  let AutoPers=new Person(PersonParams, actionMethod, deleteMethod)
+  let AutoPers=new Person(PersonParams, actionMethod, deleteMethod, damageMethod)
   FetchedPersons.push(AutoPers.Info())
   localStorage.setItem('persArray',JSON.stringify(FetchedPersons))
 }
@@ -35,5 +38,13 @@ export function findPersonById(id) {
 export function deletePersonById(id) {
   // let StoredAsPersons=getData()
   FetchedPersons=FetchedPersons.filter(element => element.id !== id)
+  localStorage.setItem('persArray',JSON.stringify(FetchedPersons))
+}
+export function editPersonById(id, paramName, newValue) {
+  FetchedPersons.find(p=>p.id==id)[paramName]=newValue
+
+
+  //console.log('editPersonById: ', FetchedPersons.find(p=>p.id==id)['hp'])
+  
   localStorage.setItem('persArray',JSON.stringify(FetchedPersons))
 }

@@ -5,7 +5,10 @@ export default function setPerson() {
     const element = data.params[i];
     if(element=="id"){
       ObjToReturn[element]=Date.now()
-    }else {      
+    }else if (element=="hp"){
+      ObjToReturn[element]=String(40)
+    }    
+    else {      
       let paramValue=prompt(`Введите значение ${element}: `)
       ObjToReturn[element]= paramValue ? paramValue : 0;
     }
@@ -13,6 +16,6 @@ export default function setPerson() {
 
   }
 
-  // console.log('ObjToReturn: \n',ObjToReturn)
+  console.log('ObjToReturn: \n',ObjToReturn)
   return ObjToReturn
 }
