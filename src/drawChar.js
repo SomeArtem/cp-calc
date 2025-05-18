@@ -24,7 +24,6 @@ export function DrawChar(persContainer, Pers){
   let persNameBox=document.createElement('div')
   let statBox=document.createElement('div')
   let armorBox=document.createElement('div')
-  let careerSkillBox=document.createElement('div')
   let saveHpBox=document.createElement('div')
   let skillBox=document.createElement('div')
   let damagedHpBox=document.createElement('div')  
@@ -37,6 +36,7 @@ export function DrawChar(persContainer, Pers){
   armorBox.classList.add('armorBox')
   persNameBox.classList.add('persNameBox')
   idBox.classList.add('idBox')  
+  saveBtmBox.classList.add('saveBtmBox')
   damagedHpBox.classList.add('damagedHpBox')
 
   
@@ -56,13 +56,9 @@ export function DrawChar(persContainer, Pers){
 
 
   //persName
-  let persNameHeader=document.createElement('span') 
-  persNameHeader.classList.add('propHeader')
-  let persNameValue=document.createElement('span') 
-  persNameHeader.innerText=`HANDLE `
-  persNameValue.innerText=ThisPersonInfo.persName
-  persNameBox.appendChild(persNameHeader)
-  persNameBox.appendChild(persNameValue)
+  persNameBox.innerHTML=`
+  <span class="propHeader">HANDLE </span>
+  <span>${ThisPersonInfo.persName}</span>`
 
 
 
@@ -70,9 +66,6 @@ export function DrawChar(persContainer, Pers){
   for (let i=0;i<careerSkills.length;i++) {
     let valElement = ThisPersonInfo[careerSkills[i]]
     if(valElement){
-      // let val=document.createElement('div')
-      // val.innerText=careerSkills[i]+' : '+valElement
-      // careerSkillBox.appendChild(val)
       PersonSpecialSkill=careerSkills[i]
       PersonSpecialSkillValue=valElement
     }        
@@ -81,72 +74,37 @@ export function DrawChar(persContainer, Pers){
 
 
   //Роли
-  let roleItem2=document.createElement('span')  
-  let roleHeader=document.createElement('span')  
-  roleHeader.innerText='ROLE '
-  roleHeader.classList.add('propHeader')
-  RoleBox.appendChild(roleHeader)
-  RoleBox.appendChild(roleItem2)
+  RoleBox.innerHTML=`<span class="propHeader">ROLE </span>`  
   Object.keys(RoleSkills).forEach(key => {
     let role=RoleSkills[key]
-    let roleItem=document.createElement('span')
-    let newCheckBox = document.createElement('input');
-    newCheckBox.type = 'checkbox';
-    newCheckBox.checked=true
-    roleItem.style.fontSize='12px'
-    roleItem.innerText=role+` `
-    if (role!=RoleSkills[PersonSpecialSkill]){
-      newCheckBox.checked=false
+    let checked=false
+    if (role==RoleSkills[PersonSpecialSkill]){
+      checked=true
     }
-    RoleBox.appendChild(newCheckBox)
-    RoleBox.appendChild(roleItem)
+    let roleElem=`<input type="checkbox" ${checked?'checked':''}><span style="font-size: 12px;">${role} </span>`
+    RoleBox.innerHTML+=roleElem
   });
 
 
 
   //Age+CP
-  let cpHeader=document.createElement('span')
-  cpHeader.innerText=`CHARACTER POINTS  `
-  cpHeader.classList.add('propHeader')
-  ageBox.appendChild(cpHeader)
   let CharPoints=0
   for (let i = 0; i < statParams.length; i++) {
     CharPoints += Number(ThisPersonInfo[statParams[i]]);    
   }
-  let cpValue=document.createElement('span')
-  cpValue.innerText=CharPoints
-  ageBox.appendChild(cpValue)
-
-  let ageHeader=document.createElement('span')
-  ageHeader.innerText=`AGE  `
-  ageHeader.classList.add('propHeader')
-  ageBox.appendChild(ageHeader)
-
-  let ageValue=document.createElement('span')
-  ageValue.innerText=ThisPersonInfo.age
-  ageBox.appendChild(ageValue)
-  // ageBox.innerText=`CHARACTER POINTS ${CharPoints},  AGE:${ThisPersonInfo.age} `
-
+  ageBox.innerHTML=`<span class="propHeader">CHARACTER POINTS  </span>
+  <span>${CharPoints}</span>
+  <span class="propHeader">AGE  </span>
+  <span>${ThisPersonInfo.age}</span>`
 
 
 
   //Статы
-
-  let statsHeader=document.createElement('span')
-  statsHeader.innerText=`STATS  `
-  statsHeader.classList.add('propHeader')
-  statBox.appendChild(statsHeader)
-
-  // let StatsHeader=document.createElement('span')
-  // StatsHeader.innerText=`STATS `
-  // statBox.appendChild(statsHeader)
+  statBox.innerHTML=`<span class="propHeader">STATS  </span>`
   for (let i=0;i<statParams.length;i++) {
     const valElement = ThisPersonInfo[statParams[i]]
-    let val=document.createElement('span')
-    val.innerText=`${statParams[i]}[${valElement}], `
-    statBox.appendChild(val)          
+    statBox.innerHTML+=`<span>${statParams[i]}[${valElement}], </span>`
   }
-
 
 
 
@@ -169,67 +127,37 @@ export function DrawChar(persContainer, Pers){
   let armorTabs=newArmorBox.children[1]
   for (let i = 0; i < armorParams.length; i++) {
     armorTabs.innerHTML+=`<div class="armorCell">${ThisPersonInfo[armorParams[i]]}</div>`
-      // `<div class="armorCell">${ThisPersonInfo[armorParams[i]]}</div>`
-  }  
-  
-  // for (let i = 0; i < armorParams.length; i++) { 
-  //   let armPart=document.createElement('div')
-  //   armPart.classList.add('armPart')
-  //   let armPartName=document.createElement('span')
-  //   let armPartValue=document.createElement('span')
-  //   armPartName.innerText=armorParams[i].slice(0,-2)+' '
-  //   armPartValue.innerText=ThisPersonInfo[armorParams[i]]
-  //   armPart.appendChild(armPartName)
-  //   armPart.appendChild(armPartValue)
-  //   armorBox.appendChild(armPart)
-  // }
-
+  } 
 
 
 
   //HP
-  saveBtmBox.classList.add('saveBtmBox')
+  let BTM=Math.floor(ThisPersonInfo.body/2)
+  let currentDamage=40-ThisPersonInfo.hp
   saveBtmBox.innerHTML=`
   <div>
     <div class="propHeader">Save</div>
-    <div style="border:1px solid black">num</div>
+    <div style="border:1px solid black">${ThisPersonInfo.body}</div>
   </div>
   <div>
     <div class="propHeader">BTM</div>
-    <div style="border:1px solid black">num</div>
-  </div>`
-  
-  // saveBtmBox
-  let currentDamage=40-ThisPersonInfo.hp
-  let currentHp=ThisPersonInfo.hp
-  // hpBox.innerText=`hp:${currentHp} \n`
-  for (let i = 0; i < currentDamage; i++) {
-    damagedHpBox.innerHTML+=`<input type="checkbox" class="hpCelll" checked>`
-  }
-  for (let i = 0; i < currentHp; i++) {
-    damagedHpBox.innerHTML+=`<input type="checkbox" class="hpCelll">`
+    <div style="border:1px solid black">${BTM}</div>
+  </div>`  
+  for (let i = 0; i < 40; i++) {
+    damagedHpBox.innerHTML+=`<input type="checkbox" class="hpCelll" ${(i<currentDamage)?'checked':''}>`
   }
 
   
-
 
   //Скиллы
-
-  let val=document.createElement('div')
-  val.classList.add('specialSkill')
-  val.innerText=PersonSpecialSkill+' : '+PersonSpecialSkillValue
-  
-  let skillsHeader=document.createElement('span')
-  skillsHeader.innerText=`SKILLS  `
-  skillsHeader.classList.add('propHeader')
-  skillBox.appendChild(skillsHeader)
-  skillBox.appendChild(val)
+  skillBox.innerHTML=`
+  <span class="propHeader">SKILLS  </span>
+  <div class="specialSkill">${PersonSpecialSkill} : ${PersonSpecialSkillValue}</div>
+  `
   for (let i=0;i<Skills.length;i++) {
     const valElement = ThisPersonInfo[Skills[i]]
     if(valElement){
-      let val=document.createElement('div')
-      val.innerText=Skills[i]+' : '+valElement
-      skillBox.appendChild(val)
+      skillBox.innerHTML+=`<div>${Skills[i]} : ${valElement}</div>`
     }        
   }
   
@@ -262,7 +190,6 @@ export function DrawChar(persContainer, Pers){
   PersonBox.appendChild(newArmorBox) 
   PersonBox.appendChild(armorBox) 
   PersonBox.appendChild(saveHpBox)
-  // PersonBox.appendChild(careerSkillBox) 
   PersonBox.appendChild(skillBox) 
   PersonBox.appendChild(DeleteButton)
   PersonBox.appendChild(DamageButton)
