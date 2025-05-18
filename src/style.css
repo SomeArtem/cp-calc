@@ -36,7 +36,9 @@
   font-size: 8px;
 }
 .damagedHpBox{
-  color: red;
+  /* color: red; */
+  width: 70%;
+  accent-color: black;
 }
 .persNameBox{
   word-break: keep-all;
@@ -71,6 +73,21 @@
 }
 .RoleBox{
   word-break: keep-all;
+  accent-color: black;
+}
+.specialSkill{
+  background-color: rgba(0, 0, 0, 0.2);
+  display: table-cell;
+}
+.hpCelll{
+  width: 5%;
+}
+.saveBtmBox{
+  display: flex;
+}
+.saveHpBox{
+  display: flex;
+  margin: 3px 0;
 }
 /* .roboto{
   font-family: "Roboto", sans-serif;

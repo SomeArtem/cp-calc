@@ -9,6 +9,7 @@ export function DrawChar(persContainer, Pers){
   };
 
   let PersonSpecialSkill=''
+  let PersonSpecialSkillValue=''
 
   let ThisPersonInfo=Pers.Info()
 
@@ -24,12 +25,13 @@ export function DrawChar(persContainer, Pers){
   let statBox=document.createElement('div')
   let armorBox=document.createElement('div')
   let careerSkillBox=document.createElement('div')
-  let hpBox=document.createElement('div')
+  let saveHpBox=document.createElement('div')
   let skillBox=document.createElement('div')
-  let damagedHpBox=document.createElement('span')  
-  let etcHpBox=document.createElement('span')
+  let damagedHpBox=document.createElement('div')  
+  let saveBtmBox=document.createElement('div')
     
   PersonBox.classList.add('PersonBox')
+  saveHpBox.classList.add('saveHpBox')
   RoleBox.classList.add('RoleBox')
   statBox.classList.add('statBox')
   armorBox.classList.add('armorBox')
@@ -68,10 +70,11 @@ export function DrawChar(persContainer, Pers){
   for (let i=0;i<careerSkills.length;i++) {
     let valElement = ThisPersonInfo[careerSkills[i]]
     if(valElement){
-      let val=document.createElement('div')
-      val.innerText=careerSkills[i]+' : '+valElement
-      careerSkillBox.appendChild(val)
+      // let val=document.createElement('div')
+      // val.innerText=careerSkills[i]+' : '+valElement
+      // careerSkillBox.appendChild(val)
       PersonSpecialSkill=careerSkills[i]
+      PersonSpecialSkillValue=valElement
     }        
   }
 
@@ -184,19 +187,43 @@ export function DrawChar(persContainer, Pers){
 
 
 
-  //Если поле - это HP
-  hpBox.innerText=`hp:${ThisPersonInfo.hp} \n`
-  for (let i = 0; i < 40-ThisPersonInfo.hp; i++) {
-    damagedHpBox.innerText+='x'
+  //HP
+  saveBtmBox.classList.add('saveBtmBox')
+  saveBtmBox.innerHTML=`
+  <div>
+    <div class="propHeader">Save</div>
+    <div style="border:1px solid black">num</div>
+  </div>
+  <div>
+    <div class="propHeader">BTM</div>
+    <div style="border:1px solid black">num</div>
+  </div>`
+  
+  // saveBtmBox
+  let currentDamage=40-ThisPersonInfo.hp
+  let currentHp=ThisPersonInfo.hp
+  // hpBox.innerText=`hp:${currentHp} \n`
+  for (let i = 0; i < currentDamage; i++) {
+    damagedHpBox.innerHTML+=`<input type="checkbox" class="hpCelll" checked>`
   }
-  for (let i = 0; i < ThisPersonInfo.hp; i++) {
-    etcHpBox.innerText+='o'
+  for (let i = 0; i < currentHp; i++) {
+    damagedHpBox.innerHTML+=`<input type="checkbox" class="hpCelll">`
   }
 
   
 
 
   //Скиллы
+
+  let val=document.createElement('div')
+  val.classList.add('specialSkill')
+  val.innerText=PersonSpecialSkill+' : '+PersonSpecialSkillValue
+  
+  let skillsHeader=document.createElement('span')
+  skillsHeader.innerText=`SKILLS  `
+  skillsHeader.classList.add('propHeader')
+  skillBox.appendChild(skillsHeader)
+  skillBox.appendChild(val)
   for (let i=0;i<Skills.length;i++) {
     const valElement = ThisPersonInfo[Skills[i]]
     if(valElement){
@@ -224,8 +251,8 @@ export function DrawChar(persContainer, Pers){
   DeleteButton.onclick=()=>{Pers.Delete()} 
   
 
-  hpBox.appendChild(damagedHpBox)  
-  hpBox.appendChild(etcHpBox)  
+  saveHpBox.appendChild(saveBtmBox)  
+  saveHpBox.appendChild(damagedHpBox)  
   action.appendChild(defaultOption)
   // PersonBox.appendChild(idBox) 
   PersonBox.appendChild(persNameBox) 
@@ -234,8 +261,8 @@ export function DrawChar(persContainer, Pers){
   PersonBox.appendChild(statBox) 
   PersonBox.appendChild(newArmorBox) 
   PersonBox.appendChild(armorBox) 
-  PersonBox.appendChild(hpBox)
-  PersonBox.appendChild(careerSkillBox) 
+  PersonBox.appendChild(saveHpBox)
+  // PersonBox.appendChild(careerSkillBox) 
   PersonBox.appendChild(skillBox) 
   PersonBox.appendChild(DeleteButton)
   PersonBox.appendChild(DamageButton)
