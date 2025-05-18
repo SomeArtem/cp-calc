@@ -40,4 +40,21 @@ export default {
       description:"совершает атаку дальнего боя с дробовиком",
       whatToRoll:"[Дистанция дробовика = 50м.\nУрБлизко=4d6\nУрСредне=3d6\nУрПолн=2d6]"
     },
+    DistantAttWithAuto3rounds : {
+      actName:"closeAttWithAuto3rounds",
+      description:"совершает атаку дальнего боя очередью из 3 патронов",
+      whatToRoll:"Сделай проверку \n[REF + Оружейный Навык + 1d10+МодСтр99+3(на Сред и Близ) ]\n против \n[Сложность от дистанции]\nЕсли прошло, количество попаданмй = 1d6/2"
+    },
+    DistantAttWithFULLAUTO : {
+      actName:"DistantAttWithFULLAUTO",
+      description:"совершает атаку FULL AUTO",
+      whatToRoll:"Сделай проверку \n[REF + Оружейный Навык + 1d10+МодСтр99+3(на Сред и Близ) ]\n против \n[Сложность от дистанции]\nЕсли прошло, количество попаданмй = 1d6/2"
+    },
+    DistantAttSuppressiveFire : {
+      actName:"DistantAttSuppressiveFire",
+      description:"совершает огонь на подавление",
+      whatToRoll:"Сделай проверку \n[REF + Оружейный Навык + 1d10+МодСтр99 ]\n против \n[Сложность от дистанции]\nКаждое очко выше сложности - попадание.\n+1 к атаке за кажд 10выстр в Упор и Близ)\n-1 к атаке за кажд 10выстр на Сред и Дал)"
+    },
+    
+    
 }
