@@ -33,7 +33,12 @@ export default {
     DistantAttWithSingleShot : {
       actName:"DistantAttWithSingleShot",
       description:"совершает атаку дальнего боя с однозарядным оружием",
-      whatToRoll:"Сделай проверку \n[REF + Оружейный Навык + 1d10+МодСтр99]\n против \n[Сложность от дистанции]"
+      whatToRoll:"Сделай проверку \n[REF + Оружейный Навык + 1d10+МодСтр99]\n против \n[Сложность от дистанции]",
+      //checkStat:"ref"
+      //checkSkill:"Handgun Rifle"
+      //checkRoll:"1d10"
+      //checkModif99:""
+      //difficulty:""
     },
     DistantAttWithShotgun : {
       actName:"DistantAttWithShotgun",
