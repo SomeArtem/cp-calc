@@ -7,7 +7,7 @@
   font-size: 14px;
 }
 #app{
-  width: 1050px;
+  width: 1024px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -19,14 +19,15 @@
 #persContainer{
   display: flex;
   flex-wrap: wrap;
-  background-color: bisque;
+  justify-content: center;
   width: 100%;
   word-break: break-all;
+  border: 3px solid black;
 }
 
 .PersonBox{
   margin: 10px;
-  width: 33%;
+  width: 31%;
   background-color: white;
   border: 3px solid black;
   padding: 5px;

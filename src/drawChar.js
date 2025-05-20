@@ -113,7 +113,7 @@ export function DrawChar(persContainer, Pers){
   </div>`
   let armorTabs=newArmorBox.children[1]
   for (let i = 0; i < armorParams.length; i++) {
-    armorTabs.innerHTML+=`<div class="armorCell">${ThisPersonInfo[armorParams[i]]}</div>`
+    armorTabs.innerHTML+=`<div class="armorCell">${ThisPersonInfo[armorParams[i]]?ThisPersonInfo[armorParams[i]]:0}</div>`
   } 
 
 

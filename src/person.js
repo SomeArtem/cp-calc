@@ -310,7 +310,7 @@ export default class Person{
     DrawChar(persContainer, this)
   }
   Click(actionName){
-    this.actionMethod(actionName, this.persName)
+    this.actionMethod(actionName, this.id)
   }
   Delete(){
     this.deleteMethod(this.id)
