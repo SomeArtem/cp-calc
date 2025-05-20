@@ -54,6 +54,10 @@
   color: white;
   font-size: 16px;
 }
+.weaponHeader{
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+}
 .armorFlex{
   display: flex;
   align-items: flex-start;

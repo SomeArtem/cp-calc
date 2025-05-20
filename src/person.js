@@ -6,9 +6,11 @@ export default class Person{
   deleteMethod
   damageMethod
   id
+  Weapons
   constructor({
     id,
     hp,
+    Weapons=[],
     age=0,
     persName='Not assigned',
     headSP=0,
@@ -225,6 +227,7 @@ export default class Person{
     this.actionMethod=actionMethod
     this.deleteMethod=deleteMethod
     this.damageMethod=damageMethod
+    this.Weapons=Weapons
   }
   Info(){
     console.log(this)

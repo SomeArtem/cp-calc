@@ -419,44 +419,229 @@ export default [
     range:400,
     relatedSkill:'Rifle'
   },
-  
+  {
+    theName:'Club Дубинка',
+    type:'MEL',
+    precesion:0,
+    damage:'1d6',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Knife Нож',
+    type:'MEL',
+    precesion:0,
+    damage:'1d6',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Sword Меч',
+    type:'MEL',
+    precesion:0,
+    damage:'2d6+2',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Axe Топор',
+    type:'MEL',
+    precesion:-1,
+    damage:'2d6+3',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Nunchaku Нунчаки',
+    type:'MEL',
+    precesion:0,
+    damage:'3d6',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Naginata',
+    type:'MEL',
+    precesion:0,
+    damage:'3d6',
+    shots:0,
+    ROF:1,
+    range:2,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Shuriken Сюрикен',
+    type:'MEL',
+    precesion:0,
+    damage:'1d6/3',
+    shots:0,
+    ROF:1,
+    range:2,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Switchblade Складной нож',
+    type:'MEL',
+    precesion:0,
+    damage:'1d6/2',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'BrassKnuckles Кастет',
+    type:'MEL',
+    precesion:0,
+    damage:'1d6+2',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Sledgehammer Кувалда',
+    type:'MEL',
+    precesion:-1,
+    damage:'4d6',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Chainsaw Бензопила',
+    type:'MEL',
+    precesion:-3,
+    damage:'4d6',
+    shots:0,
+    ROF:1,
+    range:2,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Kendachi Monoknife',
+    type:'MEL',
+    precesion:1,
+    damage:'2d6',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Kendachi MonoNaginata',
+    type:'MEL',
+    precesion:0,
+    damage:'4d6',
+    shots:0,
+    ROF:1,
+    range:2,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Kendachi MonoKatana',
+    type:'MEL',
+    precesion:1,
+    damage:'4d6',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'SliceNdice (Monowire Implant)',
+    type:'MEL',
+    precesion:0,
+    damage:'2d6',
+    shots:0,
+    ROF:1,
+    range:2,
+    relatedSkill:'Melee'
+  },
+  {
+    theName:'Hand',
+    type:'WOW',
+    precesion:0,
+    damage:'1d6/2',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Brawling'
+  },
+  {
+    theName:'Leg',
+    type:'WOW',
+    precesion:0,
+    damage:'1d6',
+    shots:0,
+    ROF:1,
+    range:1,
+    relatedSkill:'Brawling'
+  },
+
+  {
+    theName: `
+      Name                     Type   WA .    Damage   #Shots     ROF   Range       
+      SPM-1 Battleglove          Punch        2d6/3d6 - - VR            1m 
+      Scratchers                 Punch        1d6/3*                    1m 100 2d6  (имплант)
+      Vampires                   Punch        1d6/3*                    1m 100 2d6  (имплант)
+      Rippers                    Punch        1d6+3*                    1m 400 3d6  (имплант)
+      Wolvers                    Punch        3d6*                      1m 600 3d6+1  (имплант)
+      Big Knucks                 Punch        1d6+2                     1m 500 3d6  (имплант)
+      Hammer Hand                Punch        1d10                      1m 600 2d6  (имплант)
+      Spike Hand                 Punch        1d6+3AP                   1m 500 2d6  (имплант)
+      Talon Foot                 Kick         1d6*                      1m 600 2d6  (имплант)
+      Spike Heel Foot            Kick         2d6AP                     1m 500 2d6  (имплант)
+
+      
+        {
+          theName:'Hand',
+          type:'WOW',
+          precesion:0,
+          damage:'1d6/2',
+          shots:0,
+          ROF:1,
+          range:1,
+          relatedSkill:'Brawling'
+        },
+        {
+          theName:'Leg',
+          type:'WOW',
+          precesion:0,
+          damage:'1d6',
+          shots:0,
+          ROF:1,
+          range:1,
+          relatedSkill:'Brawling'
+        },
+
+      
+      
+      Cybersnake                 EX 1d6 1m 1200 4d6 CP20
+      Avante Needlegun           P +0 Drugs (Needle) 15 2            40m 
+      Enertex Power Squirt       P -2 Drugs 50 1                     10m
+      Militech Laser Cannon      RIF +0 N R 1-5d6 10 2                   200m
+      Militech Taser             P -1 Stun -2 10 1                   10m
+      Nelspot "Wombat"           P -1 Drugs 20 2                     40m 
+      Techtron 15 Microwaver     P +0 1d6 + special 10 2             20m 
+    `,
+    type:'OTHER',
+    precesion:0,
+    damage:'0',
+    shots:0,
+    ROF:0,
+    range:0,
+    relatedSkill:'OTHER'
+  },  
 ]
-`
- Name                     Type WA .      Damage   #Shots     ROF   Range 
- 
- 
- Avante Needlegun           P +0 Drugs (Needle) 15 2            40m 
-Enertex Power Squirt       P -2 Drugs 50 1                     10m
-Militech Laser Cannon      RIF +0 N R 1-5d6 10 2                   200m
-Militech Taser             P -1 Stun -2 10 1                   10m
-Nelspot "Wombat"           P -1 Drugs 20 2                     40m 
-Techtron 15 Microwaver     P +0 1d6 + special 10 2             20m 
- 
-Switchblade                MEL +0 P C 1d6/2* - - - 1m 15 CP20
-Club MEL +0 L C 1d6 - - - 1m 2 CP20
-Knife MEL +0 P C 1d6* - - - Throw 1-20 CP20
-Brass Knuckles Punch +0 P C 1d6+2 - - - 1m 10 CP20
-SPM-1 Battleglove Punch -2 N P 2d6/3d6 - - VR 1m 900 CP20
-Sword MEL +0 N C 2d6+2* - - - 1m 20-200 CP20
-Axe MEL -1 N C 2d6+3* - - - 1m 20 CP20
-Sledgehammer MEL -1 N C 4d6 - - - 1m 20 CP20
-Chainsaw MEL -3 N C 4d6* - - - 2m 80 CP20
-
-Kendachi Monoknife MEL +1 P P 2d6# - - VR 1m 200 CP20
-Nunchaku MEL +0 L C 3d6 - - - 1m 15 CP20
-Naginata MEL +0 N P 3d6* - - - 2m 100 CP20
-Kendachi MonoNaginata MEL +0 N R 4d6# - - VR 2m 400 CP20
-Kendachi MonoKatana MEL +1 N R 4d6# - - VR 1m 600 CP20
-
- 
-Scratchers Punch 1d6/3* 1m 100 2d6 CP20
-Talon Foot Kick 1d6* 1m 600 2d6 CP20
-Big Knucks Punch 1d6+2 1m 500 3d6 CP20
-Rippers Punch 1d6+3* 1m 400 3d6 CP20
-Spike Hand Punch 1d6+3AP 1m 500 2d6 CP20
-Hammer Hand Punch 1d10 1m 600 2d6 CP20
-Spike Heel Foot Kick 2d6AP 1m 500 2d6 CP20
-Wolvers Punch 3d6* 1m 600 3d6+1 CP20
-Slice N' Dice MEL 2d6# 2m 700 3d6 CP20
-Cybersnake EX 1d6 1m 1200 4d6 CP20
-`

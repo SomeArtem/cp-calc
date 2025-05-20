@@ -5,6 +5,7 @@ export default {
         "id",
         "hp",
         "age",
+        "Weapons",
         "headSP",
         "torsoSP",
         "rightHandSP",

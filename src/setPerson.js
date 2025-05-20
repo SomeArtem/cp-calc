@@ -7,6 +7,8 @@ export default function setPerson() {
       ObjToReturn[element]=Date.now()
     }else if (element=="hp"){
       ObjToReturn[element]=String(40)
+    }else if (element=="Weapons"){
+      ObjToReturn[element]=['Hand', 'Leg']
     }    
     else {      
       let paramValue=prompt(`Введите значение ${element}: `)
