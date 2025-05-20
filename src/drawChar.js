@@ -1,4 +1,5 @@
 import actions from "./actions"
+import AddWeapon from "./AddWeapon";
 import PersParams from "./PersParams"
 import RoleSkills from "./RoleSkills";
 import weapons from "./weapons";
@@ -149,45 +150,31 @@ export function DrawChar(persContainer, Pers){
     }        
   }
 
+
+
   //Weapons
   let WeaponBox=document.createElement('div')
-  WeaponBox.innerHTML=`
-  <span class="propHeader">WEAPONS  </span>
-  `
+  WeaponBox.classList.add('WeaponBox')
+  WeaponBox.innerHTML=`<span class="propHeader">WEAPONS  </span>`
   let persWeapons=ThisPersonInfo.Weapons
-  // WeaponBox.innerHTML+=persWeapons
-  for (let i=0;i<persWeapons.length;i++) {
-    const valElement = persWeapons[i]
-    let wepFull=weapons.find(x=>x.theName==valElement)
-    if(valElement){
-      WeaponBox.innerHTML+=`<div>${valElement} ${wepFull.damage}</div>`
-    }        
-  }
-  WeaponBox.innerHTML+=`
-  <div class="armorFlex">
-    <div class="armorCell armorHeader weaponHeader">Name</div>
+  WeaponBox.innerHTML+=`<div class="armorFlex"><div class="armorCell armorHeader weaponHeader">Name</div>
     <div class="armorCell armorHeader weaponHeader">Type</div>
     <div class="armorCell armorHeader weaponHeader">W.A.</div>
     <div class="armorCell armorHeader weaponHeader">Damage</div>
     <div class="armorCell armorHeader weaponHeader">Shots</div>
     <div class="armorCell armorHeader weaponHeader">ROF</div>
-    <div class="armorCell armorHeader weaponHeader">Range</div>
-  </div>`
+    <div class="armorCell armorHeader weaponHeader">Range</div></div>`
   for (let i=0;i<persWeapons.length;i++) {
     const valElement = persWeapons[i]
     let wepFull=weapons.find(x=>x.theName==valElement)
     if(valElement){
-      WeaponBox.innerHTML+=`
-        <div class="armorFlex">
-          <div class="armorCell armorHeader">${wepFull.theName}</div>
+      WeaponBox.innerHTML+=`<div class="armorFlex"><div class="armorCell armorHeader">${wepFull.theName}</div>
           <div class="armorCell armorHeader">${wepFull.type}</div>
           <div class="armorCell armorHeader">${wepFull.precesion}</div>
           <div class="armorCell armorHeader">${wepFull.damage}</div>
           <div class="armorCell armorHeader">${wepFull.shots}</div>
           <div class="armorCell armorHeader">${wepFull.ROF}</div>
-          <div class="armorCell armorHeader">${wepFull.range}</div>
-        </div>
-      `
+          <div class="armorCell armorHeader">${wepFull.range}</div></div>`
     }        
   }
 
@@ -209,6 +196,10 @@ export function DrawChar(persContainer, Pers){
   DamageButton.innerText='Получить урон'
   DamageButton.onclick=()=>{Pers.AddDamage()} 
 
+  let AddWeaponButton=document.createElement('button')
+  AddWeaponButton.innerText='ДобавитьОружие'
+  AddWeaponButton.onclick=()=>{AddWeapon(ThisPersonInfo.id)} 
+
   let RunActionButton=document.createElement('button')
   RunActionButton.innerText='Выполнить действие'
   RunActionButton.onclick=()=>{Pers.Click(action.value)} 
@@ -228,6 +219,7 @@ export function DrawChar(persContainer, Pers){
   PersonBox.appendChild(WeaponBox) 
   PersonBox.appendChild(DeleteButton)
   PersonBox.appendChild(DamageButton)
+  PersonBox.appendChild(AddWeaponButton)
   PersonBox.appendChild(action)
   PersonBox.appendChild(RunActionButton)
   persContainer.appendChild(PersonBox)
