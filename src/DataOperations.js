@@ -13,8 +13,6 @@ export function getData() {
     let currentPers=new Person(FetchedPersons[i], actionMethod, deleteMethod, damageMethod)
     StoredAsPersons.push(currentPers)
   }
-  console.log('Отработал getData FetchedPersons: ')
-  console.dir(FetchedPersons)
   return StoredAsPersons
 }
 
@@ -36,15 +34,11 @@ export function findPersonById(id) {
 }
 
 export function deletePersonById(id) {
-  // let StoredAsPersons=getData()
   FetchedPersons=FetchedPersons.filter(element => element.id !== id)
   localStorage.setItem('persArray',JSON.stringify(FetchedPersons))
 }
+
 export function editPersonById(id, paramName, newValue) {
   FetchedPersons.find(p=>p.id==id)[paramName]=newValue
-
-
-  console.log('editPersonById: ', paramName, newValue)
-  
   localStorage.setItem('persArray',JSON.stringify(FetchedPersons))
 }

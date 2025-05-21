@@ -230,7 +230,6 @@ export default class Person{
     this.Weapons=Weapons
   }
   Info(){
-    console.log(this)
     let resultOb={}
     for (var key in this) {      
       if (this[key]!==0) {

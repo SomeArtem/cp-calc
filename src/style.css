@@ -96,7 +96,7 @@
 }
 .divPopup{
     position: absolute;
-    background-color: #00ffff85;
+    background-color: rgba(0, 0, 0, 0.55);
     height: 100%;
     width: 100%;
     display: flex;
@@ -112,7 +112,12 @@
   width: 200px;
 }
 .delWeaponButton{
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.23);
+}
+.weaponWrapper{
+  background-color: #ffffff;
+  border: 1px solid black;
+  padding: 15px;
 }
 /* .roboto{
   font-family: "Roboto", sans-serif;

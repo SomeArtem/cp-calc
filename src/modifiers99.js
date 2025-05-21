@@ -1,150 +1,180 @@
 export default [
   {
+    id:1,
     enDescription:"TargetImmobile",
     ruDescription:"ЦельНеподвижна",
     bonusValue:2
   },
   {
+    id:2,
     enDescription:"TargetDodgingMelee",
     ruDescription:"ЦельУклоняетсяББ",
     bonusValue:-1
   },
   {
+    id:3,
     enDescription:"MovingTargetREF10",
     ruDescription:"ДвижущаясяЦельРефл10",
     bonusValue:-3
   },
   {
+    id:4,
     enDescription:"MovingTargetREF12",
     ruDescription:"ДвижущаясяЦельРефл12",
     bonusValue:-4
   },
   {
+    id:5,
     enDescription:"MovingTargetREF14",
     ruDescription:"ДвижущаясяЦельРефл14",
     bonusValue:-5
   },
   {
+    id:6,
     enDescription:"FastDraw",
     ruDescription:"НаВскидку",
     bonusValue:-3
   },
   {
+    id:7,
     enDescription:"Ambush",
     ruDescription:"Засада",
     bonusValue:5
   },
   {
+    id:8,
     enDescription:"AimedShotAtBody",
     ruDescription:"ПрицельныйВыстрелВтело",
     bonusValue:-4
   },
   {
+    id:9,
     enDescription:"Ricochet",
     ruDescription:"Рикошет",
     bonusValue:-5
   },
   {
+    id:10,
     enDescription:"BlindedLightDust",
     ruDescription:"Ослеплён",
     bonusValue:-3
   },
   {
+    id:11,
     enDescription:"TargetSilhouet",
     ruDescription:"СилуэтЦели",
     bonusValue:2
   },
   {
+    id:12,
     enDescription:"TurningFaceTarget",
     ruDescription:"ПоворачиваяЛицоКцели",
     bonusValue:-2
   },
   {
+    id:13,
     enDescription:"UsingTwoWeapons",
     ruDescription:"сДвухРук",
     bonusValue:-3
   },
   {
+    id:14,
     enDescription:"FiringWhileRunning",
     ruDescription:"СтреляяНабегу",
     bonusValue:-3
   },
   {
+    id:15,
     enDescription:"FiringShoulderFromHip",
     ruDescription:"СтрельбаОтБедра",
     bonusValue:-2
   },
   {
+    id:16,
     enDescription:"TurretMountedWeapon",
     ruDescription:"ТурельСкреплением",
     bonusValue:2
   },
   {
+    id:17,
     enDescription:"VehicleMountedNoTurret",
     ruDescription:"ОружиеЗакрепленоНаТранспорте",
     bonusValue:-4
   },
   {
+    id:18,
     enDescription:"LargeTarget",
     ruDescription:"БольшаяЦель",
     bonusValue:4
   },
   {
+    id:19,
     enDescription:"SmallTarget",
     ruDescription:"МаленькаяЦель",
     bonusValue:-4
   },
   {
+    id:20,
     enDescription:"TinyTarget",
     ruDescription:"КрошечнаяЦель",
     bonusValue:-6
   },
   {
+    id:21,
     enDescription:"Aiming",
     ruDescription:"Прицелившись",
     bonusValue:1
   },
   {
+    id:22,
     enDescription:"LaserSight",
     ruDescription:"ЛазерныйПрицел",
     bonusValue:1
   },
   {
+    id:23,
     enDescription:"TelescopicSightExtreme",
     ruDescription:"ТелескопическийПрицелЭкстрДист",
     bonusValue:2
   },
   {
+    id:24,
     enDescription:"TelescopicSightMedium",
     ruDescription:"ТелескопическийПрицелСредДист",
     bonusValue:1
   },
   {
+    id:25,
     enDescription:"TargetingScope",
     ruDescription:"ПрицельныйВидоискатель",
     bonusValue:1
   },
   {
+    id:26,
     enDescription:"Smartgun",
     ruDescription:"УмноеОружие",
     bonusValue:2
   },
   {
+    id:27,
     enDescription:"SmartGoggles",
     ruDescription:"УмныеОчки",
     bonusValue:2
   },
   {
+    id:28,
     enDescription:"ThreeRoundBurstCloseMedium",
     ruDescription:"ОчередьИзТрёхБлизкоСредне",
     bonusValue:3
   },
   {
+    id:29,
     enDescription:"FullAutoClose",
     ruDescription:"ЗажавГашеткуБлизко",
     bonusValue:1
   },
   {
+    id:30,
     enDescription:"FullAutoAllOther",
     ruDescription:"ЗажавГашеткуСреднеДалеко",
     bonusValue:-1
