@@ -1,5 +1,6 @@
 import actions from "./actions"
 import AddWeapon from "./AddWeapon";
+import { DeleteWeaponFromUser } from "./DeleteWeaponFromUser";
 import PersParams from "./PersParams"
 import RoleSkills from "./RoleSkills";
 import weapons from "./weapons";
@@ -109,7 +110,7 @@ export function DrawChar(persContainer, Pers){
     <div class="armorCell">L.Leg</div>
   </div>
   <div class="armorFlex" id="armorValues">
-    <div class="armorCell propHeader armorHeader">Armor SP</div>
+    <div class="armorCell propHeader armorHeader">ArmorSP</div>
   </div>`
   let armorTabs=newArmorBox.children[1]
   for (let i = 0; i < armorParams.length; i++) {
@@ -154,6 +155,14 @@ export function DrawChar(persContainer, Pers){
 
   //Weapons
   let WeaponBox=document.createElement('div')
+  WeaponBox.onclick=(e)=>{
+    if (e.target.classList[0]=='delWeaponButton'&&e.target.value){
+      let [targetPersonId, weaponIdentifier]= e.target.value.split('/')//это массив
+      // console.log(`targetPerson - ${targetPersonId}, weaponIdentifier - ${weaponIdentifier}`)
+      DeleteWeaponFromUser(targetPersonId, weaponIdentifier)
+
+    }
+  }
   WeaponBox.classList.add('WeaponBox')
   WeaponBox.innerHTML=`<span class="propHeader">WEAPONS  </span>`
   let persWeapons=ThisPersonInfo.Weapons
@@ -163,7 +172,8 @@ export function DrawChar(persContainer, Pers){
     <div class="armorCell armorHeader weaponHeader">Damage</div>
     <div class="armorCell armorHeader weaponHeader">Shots</div>
     <div class="armorCell armorHeader weaponHeader">ROF</div>
-    <div class="armorCell armorHeader weaponHeader">Range</div></div>`
+    <div class="armorCell armorHeader weaponHeader">Range</div>
+    <div class="armorCell armorHeader weaponHeader">Del</div></div>`
   for (let i=0;i<persWeapons.length;i++) {
     const valElement = persWeapons[i]
     let wepFull=weapons.find(x=>x.theName==valElement)
@@ -174,7 +184,8 @@ export function DrawChar(persContainer, Pers){
           <div class="armorCell armorHeader">${wepFull.damage}</div>
           <div class="armorCell armorHeader">${wepFull.shots}</div>
           <div class="armorCell armorHeader">${wepFull.ROF}</div>
-          <div class="armorCell armorHeader">${wepFull.range}</div></div>`
+          <div class="armorCell armorHeader">${wepFull.range}</div>
+          <div class="armorCell armorHeader"><button class="delWeaponButton" value="${ThisPersonInfo.id}/${i}">del</button></div></div>`
     }        
   }
 

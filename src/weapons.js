@@ -1,5 +1,6 @@
 export default [
   {
+    id:1,
     theName:'BudgetArms C-13',
     type:'P',
     precesion:-1,
@@ -10,6 +11,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:2,
     theName:'Dai Lung Cybermag 15',
     type:'P',
     precesion:-1,
@@ -20,6 +22,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:3,
     theName:'Federated Arms X-22',
     type:'P',
     precesion:0,
@@ -30,6 +33,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:4,
     theName:'Colt .38 Detective',
     type:'P',
     precesion:1,
@@ -40,6 +44,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:5,
     theName:'Militech Arms Avenger',
     type:'P',
     precesion:0,
@@ -50,6 +55,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:6,
     theName:'Federated Arms X-9',
     type:'P',
     precesion:0,
@@ -60,6 +66,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:7,
     theName:'Colt .45 Peacemaker',
     type:'P',
     precesion:0,
@@ -70,6 +77,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:8,
     theName:'Dai Lung Streetmaster',
     type:'P',
     precesion:0,
@@ -80,6 +88,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:9,
     theName:'S&W Combat Magnum',
     type:'P',
     precesion:1,
@@ -90,6 +99,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:10,
     theName:'C.O.P. Derringer',
     type:'P',
     precesion:0,
@@ -100,6 +110,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:11,
     theName:'BudgetArms Auto 3',
     type:'P',
     precesion:-1,
@@ -110,6 +121,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:12,
     theName:'Sternmeyer Type 35',
     type:'P',
     precesion:0,
@@ -120,6 +132,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:13,
     theName:'Llama Commanche',
     type:'P',
     precesion:0,
@@ -130,6 +143,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:14,
     theName:'Armalite 44',
     type:'P',
     precesion:0,
@@ -140,6 +154,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:15,
     theName:'Colt AMT Model 2000',
     type:'P',
     precesion:0,
@@ -150,6 +165,7 @@ export default [
     relatedSkill:'Handgun'
   },
   {
+    id:16,
     theName:'Vz61 Skorpion',
     type:'SMG',
     precesion:2,
@@ -160,6 +176,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:17,
     theName:'Fed.Arms Tech Assault 2',
     type:'SMG',
     precesion:1,
@@ -170,6 +187,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:18,
     theName:'Uzi Miniauto 9',
     type:'SMG',
     precesion:1,
@@ -180,6 +198,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:19,
     theName:'H&K MPK-9',
     type:'SMG',
     precesion:1,
@@ -190,6 +209,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:20,
     theName:'Uzi',
     type:'SMG',
     precesion:2,
@@ -200,6 +220,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:21,
     theName:'Ingram MAC 10',
     type:'SMG',
     precesion:-1,
@@ -210,6 +231,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:22,
     theName:'Arasaka Minami 10',
     type:'SMG',
     precesion:0,
@@ -220,6 +242,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:23,
     theName:'H&K MP-2013',
     type:'SMG',
     precesion:1,
@@ -230,6 +253,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:24,
     theName:'Thompson M1',
     type:'SMG',
     precesion:2,
@@ -240,6 +264,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:25,
     theName:'Bushmaster',
     type:'SMG',
     precesion:0,
@@ -250,6 +275,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:26,
     theName:'H&K MPK-11',
     type:'SMG',
     precesion:0,
@@ -260,6 +286,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:27,
     theName:'Ingram Mac 14',
     type:'SMG',
     precesion:-2,
@@ -270,6 +297,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:28,
     theName:'Arasaka WCAA Rapid 12',
     type:'SHT',
     precesion:-1,
@@ -280,6 +308,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:29,
     theName:'Sternmeyer Stakeout 10',
     type:'SHT',
     precesion:-2,
@@ -290,6 +319,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:30,
     theName:'CAWS',
     type:'SHT',
     precesion:0,
@@ -300,6 +330,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:31,
     theName:'AKR-20 Medium Assault',
     type:'RIF',
     precesion:0,
@@ -310,6 +341,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:32,
     theName:'M-16A',
     type:'RIF',
     precesion:2,
@@ -320,6 +352,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:33,
     theName:'Steyr AUG',
     type:'RIF',
     precesion:2,
@@ -330,6 +363,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:34,
     theName:'Militech Ronin Light',
     type:'RIF',
     precesion:1,
@@ -340,6 +374,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:35,
     theName:'AK-47 Medium Assault',
     type:'RIF',
     precesion:0,
@@ -350,6 +385,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:36,
     theName:'Kalashnikov A-80',
     type:'RIF',
     precesion:-1,
@@ -360,6 +396,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:37,
     theName:'Winchester M70',
     type:'RIF',
     precesion:+3,
@@ -370,6 +407,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:38,
     theName:'KA F-253 Flamethrower',
     type:'HVY',
     precesion:-2,
@@ -380,6 +418,7 @@ export default [
     relatedSkill:'HeavyWeapons'
   },
   {
+    id:39,
     theName:'Barrett-Arasaka 20mm Sniper Rifle',
     type:'HVY',
     precesion:0,
@@ -390,6 +429,7 @@ export default [
     relatedSkill:'HeavyWeapons'
   },
   {
+    id:40,
     theName:'Commercial 40mm Grenade Launcher',
     type:'HVY',
     precesion:0,
@@ -400,6 +440,7 @@ export default [
     relatedSkill:'HeavyWeapons'
   },
   {
+    id:41,
     theName:'Sternmeyer SMG 21',
     type:'SMG',
     precesion:0,
@@ -410,6 +451,7 @@ export default [
     relatedSkill:'Submachinegun'
   },
   {
+    id:42,
     theName:'FN-RAL Heavy Assault',
     type:'RIF',
     precesion:-1,
@@ -420,6 +462,7 @@ export default [
     relatedSkill:'Rifle'
   },
   {
+    id:43,
     theName:'Club Дубинка',
     type:'MEL',
     precesion:0,
@@ -430,6 +473,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:44,
     theName:'Knife Нож',
     type:'MEL',
     precesion:0,
@@ -440,6 +484,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:45,
     theName:'Sword Меч',
     type:'MEL',
     precesion:0,
@@ -450,6 +495,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:46,
     theName:'Axe Топор',
     type:'MEL',
     precesion:-1,
@@ -460,6 +506,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:47,
     theName:'Nunchaku Нунчаки',
     type:'MEL',
     precesion:0,
@@ -470,6 +517,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:48,
     theName:'Naginata',
     type:'MEL',
     precesion:0,
@@ -480,6 +528,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:49,
     theName:'Shuriken Сюрикен',
     type:'MEL',
     precesion:0,
@@ -490,6 +539,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:50,
     theName:'Switchblade Складной нож',
     type:'MEL',
     precesion:0,
@@ -500,6 +550,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:51,
     theName:'BrassKnuckles Кастет',
     type:'MEL',
     precesion:0,
@@ -510,6 +561,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:52,
     theName:'Sledgehammer Кувалда',
     type:'MEL',
     precesion:-1,
@@ -520,6 +572,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:53,
     theName:'Chainsaw Бензопила',
     type:'MEL',
     precesion:-3,
@@ -530,6 +583,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:54,
     theName:'Kendachi Monoknife',
     type:'MEL',
     precesion:1,
@@ -540,6 +594,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:55,
     theName:'Kendachi MonoNaginata',
     type:'MEL',
     precesion:0,
@@ -550,6 +605,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:56,
     theName:'Kendachi MonoKatana',
     type:'MEL',
     precesion:1,
@@ -560,6 +616,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:57,
     theName:'SliceNdice (Monowire Implant)',
     type:'MEL',
     precesion:0,
@@ -570,6 +627,7 @@ export default [
     relatedSkill:'Melee'
   },
   {
+    id:58,
     theName:'Hand',
     type:'WOW',
     precesion:0,
@@ -580,6 +638,7 @@ export default [
     relatedSkill:'Brawling'
   },
   {
+    id:59,
     theName:'Leg',
     type:'WOW',
     precesion:0,

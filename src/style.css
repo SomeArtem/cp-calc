@@ -94,6 +94,26 @@
   display: flex;
   margin: 3px 0;
 }
+.divPopup{
+    position: absolute;
+    background-color: #00ffff85;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Weappons{
+  height: 200px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 200px;
+}
+.delWeaponButton{
+  background-color: red;
+}
 /* .roboto{
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
