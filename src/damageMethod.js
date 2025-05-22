@@ -30,7 +30,9 @@ export default function damageMethod(id) {
   let damage=prompt(`Количество входящего урона по ${targetPers.persName}????`)
   if (Number(damage)>Number(targetPartArmor)){
     // console.log('Броню нужно уменьшить на 1')
-    editPersonById(id, targetPart, targetPartArmor-1)
+    if(targetPartArmor>0){
+      editPersonById(id, targetPart, targetPartArmor-1)
+    }
   }
   console.log(`damage${damage}-armor${targetPartArmor}-btm${Math.floor(targetPers.body/2)}`)
   damage=damage-targetPartArmor-Math.floor(targetPers.body/2)
