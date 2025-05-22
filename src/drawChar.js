@@ -1,5 +1,8 @@
 import actions from "./actions"
+import AddCyber from "./AddCyber";
 import AddWeapon from "./AddWeapon";
+import combatImplants from "./combatImplants";
+import { DeleteCyberFromUser } from "./DeleteCyberFromUser";
 import { DeleteWeaponFromUser } from "./DeleteWeaponFromUser";
 import PersParams from "./PersParams"
 import RoleSkills from "./RoleSkills";
@@ -15,7 +18,7 @@ export function DrawChar(persContainer, Pers){
   let PersonSpecialSkillValue=''
   
   let PParams=PersParams.params
-  let specialParams=['id', 'hp', 'persName','age','diff','Weapons']
+  let specialParams=['id', 'hp', 'persName','age','diff','Weapons','Cybernetics']
   let armorParams=['headSP', 'torsoSP', 'rightHandSP', 'leftHandSP', 'rightLegSP', 'leftLegSP']
   let statParams=['int', 'ref', 'tec', 'cool', 'att', 'luck', 'ma', 'body', 'emp']
   let careerSkills=['Authority', 'CharisLeadership', 'CombatSense', 'Credibility', 'Family', 'Interface', 'JuryRig', 'MedicalTech', 'Resources','Streetdeal']
@@ -191,6 +194,48 @@ export function DrawChar(persContainer, Pers){
 
 
 
+
+  //Cybernetics
+  let CyberBox=document.createElement('div')
+  CyberBox.onclick=(e)=>{
+    if (e.target.classList[0]=='delCyberButton'&&e.target.value){
+      let [targetPersonId, cyberIdentifier]= e.target.value.split('/')//это массив
+      DeleteCyberFromUser(targetPersonId, cyberIdentifier)
+    }
+  }
+  CyberBox.classList.add('CyberBox')
+  CyberBox.innerHTML=`<span class="propHeader">CYBERNETICS  </span>`
+  let persCybers=ThisPersonInfo.Cybernetics
+  console.dir(ThisPersonInfo)
+  CyberBox.innerHTML+=`<div class="armorFlex"><div class="armorCell armorHeader weaponHeader">Name</div>
+    <div class="armorCell armorHeader weaponHeader">place</div>
+    <div class="armorCell armorHeader weaponHeader">Damage</div>
+    <div class="armorCell armorHeader weaponHeader">DMG Multip</div>
+    <div class="armorCell armorHeader weaponHeader">additionalArmor</div>
+    <div class="armorCell armorHeader weaponHeader">newArmor</div>
+    <div class="armorCell armorHeader weaponHeader">Del</div></div>`
+  if (persCybers!=undefined) {
+    for (let i=0;i<persCybers.length;i++) {
+      const valElement = persCybers[i]
+      let cybFull=combatImplants.find(x=>x.theName==valElement)
+      if(valElement){
+        CyberBox.innerHTML+=`<div class="armorFlex"><div class="armorCell armorHeader">${cybFull.theName}</div>
+            <div class="armorCell armorHeader">${cybFull.place}</div>
+            <div class="armorCell armorHeader">${cybFull.damage}</div>
+            <div class="armorCell armorHeader">${cybFull.damageMultiplier}</div>
+            <div class="armorCell armorHeader">${cybFull.additionalArmor}</div>
+            <div class="armorCell armorHeader">${cybFull.newArmor}</div>
+            <div class="armorCell armorHeader"><button class="delCyberButton" value="${ThisPersonInfo.id}/${i}">del</button></div></div>`
+      }        
+    }    
+  }
+    
+
+
+
+
+
+
   //Controls
   let action=document.createElement('select')
   let defaultOption = new Option("Выберите действие", "0", true, true);
@@ -211,6 +256,10 @@ export function DrawChar(persContainer, Pers){
   AddWeaponButton.innerText='ДобавитьОружие'
   AddWeaponButton.onclick=()=>{AddWeapon(ThisPersonInfo.id)} 
 
+  let AddCybersButton=document.createElement('button')
+  AddCybersButton.innerText='ДобавитьИмплант'
+  AddCybersButton.onclick=()=>{AddCyber(ThisPersonInfo.id)} 
+
   let RunActionButton=document.createElement('button')
   RunActionButton.innerText='Выполнить действие'
   RunActionButton.onclick=()=>{Pers.Click(action.value)} 
@@ -228,9 +277,11 @@ export function DrawChar(persContainer, Pers){
   PersonBox.appendChild(saveHpBox)
   PersonBox.appendChild(skillBox) 
   PersonBox.appendChild(WeaponBox) 
+  PersonBox.appendChild(CyberBox) 
   PersonBox.appendChild(DeleteButton)
   PersonBox.appendChild(DamageButton)
   PersonBox.appendChild(AddWeaponButton)
+  PersonBox.appendChild(AddCybersButton)
   PersonBox.appendChild(action)
   PersonBox.appendChild(RunActionButton)
   persContainer.appendChild(PersonBox)

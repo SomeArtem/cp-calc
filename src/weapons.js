@@ -652,41 +652,6 @@ export default [
   {
     theName: `
       Name                     Type   WA .    Damage   #Shots     ROF   Range       
-      SPM-1 Battleglove          Punch        2d6/3d6 - - VR            1m 
-      Scratchers                 Punch        1d6/3*                    1m 100 2d6  (имплант)
-      Vampires                   Punch        1d6/3*                    1m 100 2d6  (имплант)
-      Rippers                    Punch        1d6+3*                    1m 400 3d6  (имплант)
-      Wolvers                    Punch        3d6*                      1m 600 3d6+1  (имплант)
-      Big Knucks                 Punch        1d6+2                     1m 500 3d6  (имплант)
-      Hammer Hand                Punch        1d10                      1m 600 2d6  (имплант)
-      Spike Hand                 Punch        1d6+3AP                   1m 500 2d6  (имплант)
-      Talon Foot                 Kick         1d6*                      1m 600 2d6  (имплант)
-      Spike Heel Foot            Kick         2d6AP                     1m 500 2d6  (имплант)
-
-      
-        {
-          theName:'Hand',
-          type:'WOW',
-          precesion:0,
-          damage:'1d6/2',
-          shots:0,
-          ROF:1,
-          range:1,
-          relatedSkill:'Brawling'
-        },
-        {
-          theName:'Leg',
-          type:'WOW',
-          precesion:0,
-          damage:'1d6',
-          shots:0,
-          ROF:1,
-          range:1,
-          relatedSkill:'Brawling'
-        },
-
-      
-      
       Cybersnake                 EX 1d6 1m 1200 4d6 CP20
       Avante Needlegun           P +0 Drugs (Needle) 15 2            40m 
       Enertex Power Squirt       P -2 Drugs 50 1                     10m

@@ -6,6 +6,7 @@ export default {
         "hp",
         "age",
         "Weapons",
+        "Cybernetics",
         "headSP",
         "torsoSP",
         "rightHandSP",

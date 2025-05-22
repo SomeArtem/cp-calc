@@ -7,10 +7,12 @@ export default class Person{
   damageMethod
   id
   Weapons
+  Cybernetics
   constructor({
     id,
     hp,
     Weapons=[],
+    Cybernetics=[],
     age=0,
     persName='Not assigned',
     headSP=0,
@@ -228,6 +230,7 @@ export default class Person{
     this.deleteMethod=deleteMethod
     this.damageMethod=damageMethod
     this.Weapons=Weapons
+    this.Cybernetics=Cybernetics
   }
   Info(){
     let resultOb={}
